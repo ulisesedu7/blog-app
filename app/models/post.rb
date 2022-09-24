@@ -5,9 +5,9 @@ class Post < ApplicationRecord
   has_many :likes
   
   # Data Validation
-  validates :title, presence: true, length { in: 1..250 }
-  validates :comments_counter, presence: true, numerically: { greater_than_or_equal_to: 0, only_integer: trye}
-  validates :likes_counter, presence: true, numerically: { greater_than_or_equal_to: 0, only_integer: trye}
+  validates :title, presence: true, length: { in: 1..250 }
+  validates :comments_counter, presence: true, numericality: { greater_than_or_equal_to: 0, only_integer: true}
+  validates :likes_counter, presence: true, numericality: { greater_than_or_equal_to: 0, only_integer: true}
 
   after_save :update_posts_counter
 

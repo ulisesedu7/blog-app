@@ -73,4 +73,8 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+# Rspec gems
 gem "rspec-rails", group: [:development, :test]
+gem 'ffi', group: [:development, :test]
+
