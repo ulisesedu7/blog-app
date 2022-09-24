@@ -75,6 +75,5 @@ group :test do
 end
 
 # Rspec gems
-gem "rspec-rails", group: [:development, :test]
-gem 'ffi', group: [:development, :test]
-
+gem 'ffi', group: %i[development test]
+gem 'rspec-rails', group: %i[development test]

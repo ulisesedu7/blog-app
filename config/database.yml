@@ -32,7 +32,7 @@ development:
   username: postgres
 
   # The password associated with the postgres role (username).
-  password: Ulinux18!
+  # password:
 
   reconnect: true
 
@@ -61,7 +61,7 @@ test:
   <<: *default
   database: blog_app_development
   username: postgres
-  password: Ulinux18!
+  # password:
   reconnect: true
   port: 5432
   host: localhost

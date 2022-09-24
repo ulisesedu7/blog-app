@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject do 
+  subject do
     User.create(
-      name: "Edna",
-      photo: "picture.something",
-      bio: "Most beautiful",
+      name: 'Edna',
+      photo: 'picture.something',
+      bio: 'Most beautiful',
       posts_counter: 3
     )
   end
@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
     expect(subject.posts_counter).to be >= 0
   end
 
-  it 'The subject should be an instance of the class User' do 
+  it 'The subject should be an instance of the class User' do
     expect(subject).to be_instance_of User
   end
 
