@@ -76,5 +76,5 @@ end
 
 # Rspec gems
 gem 'ffi', group: %i[development test]
-gem 'rspec-rails', group: %i[development test]
 gem 'rails-controller-testing', group: %i[development test]
+gem 'rspec-rails', group: %i[development test]
