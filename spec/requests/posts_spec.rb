@@ -1,17 +1,23 @@
 require 'rails_helper'
 
-RSpec.describe 'Posts', type: :request do
-  describe 'GET /index' do
+RSpec.describe PostsController, type: :request do
+  describe 'When the page is call, expect' do
     it 'returns http success' do
-      get '/posts/index'
+      get '/users/1/posts'
+      expect(response).to render_template(:index)
+      expect(response.status).to eq(200)
       expect(response).to have_http_status(:success)
+      expect(response.body).to include('posts')
     end
   end
 
-  describe 'GET /show' do
+  describe 'When the show pages is called' do
     it 'returns http success' do
-      get '/posts/show'
+      get '/users/1/posts/1'
+      expect(response).to render_template(:show)
+      expect(response.status).to eq(200)
       expect(response).to have_http_status(:success)
+      expect(response.body).to include('posts')
     end
   end
 end
