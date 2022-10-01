@@ -1,13 +1,19 @@
 <main>
-  <section class="users-section">
-    <article class="users-posts">
-      <p>This is where the user's posts would be</p>
-
-      <div>
-        <p>Where the comments would be</p>
-        <p>Where the comments would be</p>
-        <p>Where the comments would be</p>
-      </div>
+  <section class="user-section">
+    <article class="user-posts">
+      <h2><%= @post.title %> by <%= @user.name %></h2>
+      <p class="post-card-a">
+        Comments: <%= post.comment_counter %>, Likes: <%= post.like_counter %>
+      </p>
+      <p><%= @post.text %></p>
     </article>
+
+      <div class="posts-comments">
+          <% @comments.each do |comment| %>
+            <% if post.id == comment.post.id %>
+              <p class="comment-d"><%= @users[comment.author_id].name %>: <%= comment.text %></p>
+            <% end %>
+          <% end %>
+        </div>
   </section>
 </main>
