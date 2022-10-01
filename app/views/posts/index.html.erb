@@ -2,21 +2,33 @@
   <section class="users-section">
     <article class="users-info">
       <div class="users-section-card">
-        <img src="./" alt="Where the user face would be">
-        <h4>User's Name</h4>
-        <p>User's number of posts</p>
+        <img src="<%= @user.photo %>" alt="Where the user face would be">
+        <h4><%= @user.name %></h4>
+        <p>Number of Posts: <%= @user.posts_counter %></p>
       </div>
     </article>
 
-    <article class="users-posts">
-      <p>This is where the user's posts would be</p>
+    <% @posts.each do |post| %>
+      <article class="users-posts">
+        <% link_to post_path(post.author_id, post.id) do %>
+          <div class="post-card">
+            <h3>Post #<%= post.id %>: <%= post.title %></h2>
+            <p class="post-card-d"><%= post.text %></p>
+            <p class="post-card-a">
+              Comments: <%= post.comment_counter %>, Likes: <%= post.like_counter %>
+            </p>
+          </div>
+        <% end %>
 
-      <div>
-        <p>Where the comments would be</p>
-        <p>Where the comments would be</p>
-        <p>Where the comments would be</p>
-      </div>
-    </article>
+        <div class="posts-comments">
+          <% @comments.each do |comment| %>
+            <% if post.id == comment.post.id %>
+              <p class="comment-d"><%= @users[comment.author_id].name %>: <%= comment.text %></p>
+            <% end %>
+          <% end %>
+        </div>
+      </article>
+    <% end %>
 
     <button>Pagination</button>
   </section>
