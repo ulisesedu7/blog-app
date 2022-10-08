@@ -5,6 +5,7 @@
 
 ## Built With
 
+- HTML & CSS
 - Ruby
 - Ruby on Rails
 - Rspec for testing
