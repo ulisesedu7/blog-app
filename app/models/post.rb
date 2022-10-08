@@ -6,8 +6,8 @@ class Post < ApplicationRecord
 
   # Data Validation
   validates :title, presence: true, length: { in: 1..250 }
-  validates :comments_counter, presence: true, numericality: { greater_than_or_equal_to: 0, only_integer: true }
-  validates :likes_counter, presence: true, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  validates :comments_counter, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  validates :likes_counter, numericality: { greater_than_or_equal_to: 0, only_integer: true }
 
   after_save :update_posts_counter
 
@@ -15,9 +15,9 @@ class Post < ApplicationRecord
     Comment.where(post: self).order(updated_at: :desc).first(5)
   end
 
+  private :update_posts_counter
+
   def update_posts_counter
     author.increment!(:posts_counter)
   end
-
-  private :update_posts_counter
 end

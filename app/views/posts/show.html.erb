@@ -1,19 +1,37 @@
 <main>
-  <section class="user-section">
+  <section class="user-section d-flex justify-content-center flex-column align-items-center">
     <article class="user-posts">
-      <h2><%= @post.title %> by <%= @user.name %></h2>
-      <p class="post-card-a">
-        Comments: <%= post.comment_counter %>, Likes: <%= post.like_counter %>
-      </p>
-      <p><%= @post.text %></p>
-    </article>
-
-      <div class="posts-comments">
-          <% @comments.each do |comment| %>
-            <% if post.id == comment.post.id %>
-              <p class="comment-d"><%= @users[comment.author_id].name %>: <%= comment.text %></p>
-            <% end %>
+      <div class="posts-header">
+        <h2><%= @post.title %> by <%= @user.name %></h2>
+        <div class='like_button'>
+          <%= form_with url: like_url(@current_user), method: :post do |form| %>
+            <% form.submit 'Like' %>
           <% end %>
         </div>
+      </div>
+
+      <p class="post-card-a">
+        Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %>
+      </p>
+      <p><%= @post.text %></p>
+
+      <%= form_with url: post_url(@user, @post), method: :post, local: true, scope: :comment do |form| %>      
+        <div>
+          <%= form.label :text %>
+          <%= form.text_field :text %>
+        </div>
+        <%= form.submit :'Create Comment' %>
+      <% end %>
+    </article>
+
+    <div class="posts-comments">
+      <% @comments.each do |comment| %>
+        <% if @post.id == comment.post.id %>
+          <p class="comment-d"><%= @users[comment.author_id].name %>: <%= comment.text %></p>
+        <% end %>
+      <% end %>
+    </div>
+
+    <%= link_to "Back to Posts", posts_path(@user.id)%>
   </section>
 </main>
