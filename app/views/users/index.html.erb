@@ -7,10 +7,10 @@
 
       <% @users.each do |user| %>
         <article class="users-section d-flex justify-content-center align-items-center">
-            <img src="<%= user.photo %>" alt="The representation of the user">
+            <%= image_tag "user-regular.svg" %>
 
             <%= link_to user_path(user.id) do %>
-              <div class="users-section-card d-flex justify-content-center align-items-center">
+              <div class="users-section-card d-flex">
                 <h4><%= user.name %></h4>
                 <p>Number of Posts: <%= user.posts_counter %></p>
               </div>

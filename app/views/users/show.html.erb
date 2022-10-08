@@ -30,8 +30,18 @@
       <% end %>
     </article>
 
-    <%= link_to posts_path(@user.id) do %>
-      <button>See all posts</button>
-    <% end %>
+    <div class="posts-btns">
+      <%= link_to posts_path(@user.id) do %>
+        <button>See all posts</button>
+      <% end %>
+
+      <%= link_to new_post_path do %>
+        <button>Add a new post</button>
+      <% end %>
+
+      <%= link_to users_path do %>
+        <button>Main Page</button>
+      <% end %>
+    </div>
   </section>
 </main>
