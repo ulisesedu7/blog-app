@@ -10,15 +10,15 @@
 
     <% @posts.each do |post| %>
       <article class="users-posts">
-        <% link_to post_path(post.author_id, post.id) do %>
           <div class="post-card">
-            <h3>Post #<%= post.id %>: <%= post.title %></h2>
+            <%= link_to post_path(post.author_id, post.id) do %>
+              <h3>Post #<%= post.id %>: <%= post.title %></h3>
+            <% end %>
             <p class="post-card-d"><%= post.text %></p>
             <p class="post-card-a">
               Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
             </p>
           </div>
-        <% end %>
 
         <div class="posts-comments">
           <% @comments.each do |comment| %>

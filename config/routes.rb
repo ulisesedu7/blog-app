@@ -16,6 +16,6 @@ Rails.application.routes.draw do
 
   # Post routes
   post 'posts/new', to: 'posts#create'
-  post 'users/:user_id/posts/:id', to: 'comment#create', as: :comment
-  post 'users/:user_id/posts/:id/likes', to: 'like#create', as: :like
+  post 'users/:user_id/posts/:id', to: 'comments#create', as: :comment
+  post 'users/:user_id/posts/:id/likes', to: 'likes#create', as: :like
 end

@@ -1,17 +1,17 @@
 <main>
-  <section class="user-section">
+  <section class="user-section d-flex justify-content-center flex-column align-items-center">
     <article class="user-posts">
       <div class="posts-header">
         <h2><%= @post.title %> by <%= @user.name %></h2>
         <div class='like_button'>
-          <%= form_with url: like_url(@user, @post), method: :post do |form| %>
+          <%= form_with url: like_url(@current_user), method: :post do |form| %>
             <% form.submit 'Like' %>
           <% end %>
         </div>
       </div>
 
       <p class="post-card-a">
-        Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
+        Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %>
       </p>
       <p><%= @post.text %></p>
 
@@ -26,7 +26,7 @@
 
     <div class="posts-comments">
       <% @comments.each do |comment| %>
-        <% if post.id == comment.post.id %>
+        <% if @post.id == comment.post.id %>
           <p class="comment-d"><%= @users[comment.author_id].name %>: <%= comment.text %></p>
         <% end %>
       <% end %>
