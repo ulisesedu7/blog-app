@@ -1,0 +1,17 @@
+.users-container h2 {
+  margin: 2rem 0;
+}
+
+.users-section {
+  padding: 2rem 1rem;
+}
+
+.users-section > * {
+  text-decoration: none;
+  color: #000;
+}
+
+.users-section-card {
+  border: 1px solid #000;
+
+}

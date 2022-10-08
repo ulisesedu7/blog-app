@@ -12,4 +12,26 @@ class PostsController < ApplicationController
     @comments = Comment.where(post_id: params[:id])
     @users = User.all
   end
+
+  def new
+    @current_user = current_user
+    @post = Post.new
+  end
+
+  def create
+    @current_user = current_user
+    @post = @current_user.posts.create(post_params)
+
+    if @post.save
+      redirect_to posts_path(@current_user.id)
+      flash[:success] = 'Your post was save!'
+    else
+      flash.now[:error] = 'Error: Your post was not saved!'
+      render :new
+    end
+  end
+
+  def post_params
+    params.require(:post).permit(:title, :text)
+  end
 end

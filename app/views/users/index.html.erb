@@ -1,15 +1,16 @@
 <main>
-  <section class="d-flex justify-content-center flex-column align-items-center">
+  <section class="users-container d-flex justify-content-center flex-column align-items-center">
     <% if @users.empty? %>
       <h2>There are no users in the database</h2>
     <% else %>
       <h2>Take a look at all of the users and their number of posts</h2>
 
       <% @users.each do |user| %>
-        <article class="users-section">
+        <article class="users-section d-flex justify-content-center align-items-center">
+            <img src="<%= user.photo %>" alt="The representation of the user">
+
             <%= link_to user_path(user.id) do %>
               <div class="users-section-card d-flex justify-content-center align-items-center">
-                <img src="<%= user.photo %>" alt="The representation of the user">
                 <h4><%= user.name %></h4>
                 <p>Number of Posts: <%= user.posts_counter %></p>
               </div>
