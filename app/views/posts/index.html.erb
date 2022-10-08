@@ -1,8 +1,8 @@
 <main>
-  <section class="users-section">
+  <section class="users-section d-flex justify-content-center flex-column align-items-center">
     <article class="users-info">
-      <div class="users-section-card">
-        <img src="<%= @user.photo %>" alt="Where the user face would be">
+      <div class="users-section-card d-flex">
+        <%= image_tag "user-regular.svg" %>
         <h4><%= @user.name %></h4>
         <p>Number of Posts: <%= @user.posts_counter %></p>
       </div>
@@ -15,7 +15,7 @@
             <h3>Post #<%= post.id %>: <%= post.title %></h2>
             <p class="post-card-d"><%= post.text %></p>
             <p class="post-card-a">
-              Comments: <%= post.comment_counter %>, Likes: <%= post.like_counter %>
+              Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
             </p>
           </div>
         <% end %>
@@ -30,6 +30,18 @@
       </article>
     <% end %>
 
-    <button>Pagination</button>
+    <div class="posts-btns">
+      <%= link_to new_post_path do %>
+        <button>Add a new post</button>
+      <% end %>
+
+      <%= link_to user_path(@user.id) do %>
+        <button>Go back</button>
+      <% end %>
+
+      <%= link_to users_path do %>
+        <button>Main Page</button>
+      <% end %>
+    </div>
   </section>
 </main>

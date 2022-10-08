@@ -6,7 +6,7 @@
   padding: 2rem 1rem;
 }
 
-.users-section > * {
+.users-section > a {
   text-decoration: none;
   color: #000;
 }
