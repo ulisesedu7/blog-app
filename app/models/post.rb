@@ -15,9 +15,10 @@ class Post < ApplicationRecord
     Comment.where(post: self).order(updated_at: :desc).first(5)
   end
 
-  private :update_posts_counter
-
+  
   def update_posts_counter
     author.increment!(:posts_counter)
   end
+
+  private :update_posts_counter
 end
