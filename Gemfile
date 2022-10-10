@@ -87,5 +87,5 @@ gem 'bullet', group: 'development'
 
 # Integration Tests
 group :development, :test do
-  gem "database_cleaner"
+  gem 'database_cleaner'
 end

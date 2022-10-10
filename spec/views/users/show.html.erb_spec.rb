@@ -5,7 +5,7 @@ RSpec.describe 'users/show.html.erb', type: :feature do
     @user = User.create(
       name: 'Ulises',
       photo: 'https://www.pexels.com/photo/green-pine-trees-near-body-of-water-1064162/',
-      bio: "I enjoy music and watching movies",
+      bio: 'I enjoy music and watching movies',
       posts_counter: 0
     )
 

@@ -5,7 +5,7 @@ RSpec.describe 'posts/index.html.erb', type: :feature do
     @user = User.create(
       name: 'Ulises',
       photo: 'https://www.pexels.com/photo/green-pine-trees-near-body-of-water-1064162/',
-      bio: "I enjoy music and watching movies",
+      bio: 'I enjoy music and watching movies',
       posts_counter: 0
     )
 
@@ -14,7 +14,7 @@ RSpec.describe 'posts/index.html.erb', type: :feature do
     Post.create(author: @user, title: 'Title 3', text: 'Text 3', comments_counter: 0, likes_counter: 0)
     Post.create(author: @user, title: 'Title 4', text: 'Text 4', comments_counter: 0, likes_counter: 0)
 
-    visit "/users/#{@user.id}/posts"  
+    visit "/users/#{@user.id}/posts"
   end
 
   it 'Displays the information of the user' do
