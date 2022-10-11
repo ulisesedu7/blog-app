@@ -2,7 +2,7 @@
   <section class="users-section d-flex justify-content-center flex-column align-items-center">
     <article class="users-info">
       <div class="users-section-card d-flex">
-        <%= image_tag "user-regular.svg" %>
+        <img src="<%= @user.photo %>">
 
         <h4><%= @user.name %></h4>
         <p>Number of Posts: <%= @user.posts_counter %></p>

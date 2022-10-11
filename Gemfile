@@ -81,3 +81,11 @@ gem 'rspec-rails', group: %i[development test]
 
 # Passwords helper gem
 gem 'figaro'
+
+# n+1 problems gem helper
+gem 'bullet', group: 'development'
+
+# Integration Tests
+group :development, :test do
+  gem 'database_cleaner'
+end

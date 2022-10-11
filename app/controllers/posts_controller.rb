@@ -3,14 +3,14 @@ class PostsController < ApplicationController
     @users = User.all
     @user = User.find(params[:user_id])
     @posts = Post.where(author_id: params[:user_id])
-    @comments = Comment.all
+    @comments = Comment.all.includes([:post])
   end
 
   def show
     @current_user = current_user
     @post = Post.find(params[:id])
     @user = User.find(params[:user_id])
-    @comments = Comment.where(post_id: params[:id])
+    @comments = Comment.where(post_id: params[:id]).includes([:post])
     @users = User.all
   end
 
