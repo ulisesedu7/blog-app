@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "users#index"
 
   # Posts Routes
   get 'users/:user_id/posts', to: 'posts#index', as: :posts
@@ -18,8 +18,4 @@ Rails.application.routes.draw do
   post 'posts/new', to: 'posts#create'
   post 'users/:user_id/posts/:id', to: 'comments#create', as: :comment
   post 'users/:user_id/posts/:id/likes', to: 'likes#create', as: :like
-
-  # Root
-  root "users#index"
-
 end
