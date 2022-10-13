@@ -89,3 +89,6 @@ gem 'bullet', group: 'development'
 group :development, :test do
   gem 'database_cleaner'
 end
+
+# Authentication with Devise
+gem 'devise'

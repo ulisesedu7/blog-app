@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Defines the root path route ("/")
-  # root "articles#index"
-  # root "users#index"
+  root "users#index"
 
   # Posts Routes
   get 'users/:user_id/posts', to: 'posts#index', as: :posts

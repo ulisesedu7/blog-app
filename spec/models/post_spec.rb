@@ -45,4 +45,12 @@ RSpec.describe Post, type: :model do
   it 'The subject should have the recent_comments method available' do
     expect(subject).to respond_to(:recent_comments)
   end
+
+  it 'The subject should have the update_comments_counter method available' do
+    expect(subject).to respond_to(:update_comments_counter)
+  end
+
+  it 'The subject should have the update_likes_counter method available' do
+    expect(subject).to respond_to(:update_likes_counter)
+  end
 end

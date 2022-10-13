@@ -24,6 +24,11 @@
     <h1>Welcome to the Blog App</h1>
   </header>
 
-  <%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  
+  <section id="main-container" class="container d-flex flex-column justify-content-center align-items-center">
+    <%= yield %>
+  </section>
 </body>
 </html>
