@@ -29,4 +29,8 @@ RSpec.describe User, type: :model do
   it 'The subject should have the recent_posts method available' do
     expect(subject).to respond_to(:recent_posts)
   end
+
+  it 'The subject should have the update_posts_counter method available' do
+    expect(subject).to respond_to(:update_posts_counter)
+  end
 end

@@ -8,7 +8,7 @@
 
 .users-section > a {
   text-decoration: none;
-  color: #000;
+  color: rgb(3, 3, 3);
 }
 
 .users-section img {
@@ -17,7 +17,7 @@
 }
 
 .users-section-card {
-  border: 1px solid #000;
+  border: 1px solid rgb(4, 3, 3);
   padding: 2rem 0;
   width: 30rem;
   justify-content: space-around;
